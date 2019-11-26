@@ -12,7 +12,7 @@ job "loadbalancer" {
 
       config {
         command = "local/fabio"
-        args = []
+        args = ["-proxy.addr", ":80"]
       }
 
       artifact {
@@ -30,7 +30,7 @@ job "loadbalancer" {
         network {
           mbits = 20
           port "lb" {
-            static = 9999
+            static = 80
           }
           port "ui" {
             static = 9998
