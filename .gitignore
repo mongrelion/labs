@@ -1,2 +1,5 @@
 # Ignore bin dir
 /bin/
+
+# Ignore data dir (where Nomad and Consul data is stored)
+/data/
