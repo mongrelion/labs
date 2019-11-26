@@ -4,5 +4,6 @@
   "log_level": "DEBUG",
   "node_name": "foobar",
   "server": true,
-  "bootstrap_expect": 1
+  "bootstrap_expect": 1,
+  "ui": true
 }
