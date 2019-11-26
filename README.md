@@ -2,6 +2,13 @@
 This is an experiment to get two clusters running locally: a Nomad cluster and
 a Consul cluster.
 
+# TODO
+- [ ] Nomad is bound to 0.0.0.0. Fix
+- [ ] Consul is bound to 0.0.0.0. Fix
+- [ ] Fabio is running on host because it can't find a Consul agent in the
+      container where it runs. Connect Fabio, which runs in a container, to
+      Consul, which runs on the host
+
 # Requirements
 | What                                  | Version      |
 |---------------------------------------|--------------|
