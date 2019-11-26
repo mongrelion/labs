@@ -3,3 +3,6 @@
 
 # Ignore data dir (where Nomad and Consul data is stored)
 /data/
+
+# Ignore nomad config file since it features full paths. Better use the template (read the README)
+config/nomad.json
