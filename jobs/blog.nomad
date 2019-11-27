@@ -2,7 +2,7 @@ job "blog" {
   datacenters = ["sw-ams-1"]
 
   group "main" {
-    task "frontend" {
+    task "blog-frontend" {
       driver = "docker"
 
       config {
@@ -25,7 +25,7 @@ job "blog" {
 
       service {
         name = "blog"
-        tags = ["urlprefix-/"]
+        tags = ["urlprefix-blog.test/"]
         port = "http"
         check {
           name     = "alive"
