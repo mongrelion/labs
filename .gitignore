@@ -1,9 +1,9 @@
 # Ignore bin dir
-/bin/
+/nomad-consul-cluster/bin/
 
 # Ignore data dir (where Nomad and Consul data is stored)
-/data/
+/nomad-consul-cluster/data/
 
 # Ignore nomad config file since it features full paths. Better use the template (read the README)
-config/nomad.server.json
-config/nomad.client.json
+/nomad-consul-cluster/config/nomad.server.json
+/nomad-consul-cluster/config/nomad.client.json
