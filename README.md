@@ -8,6 +8,8 @@ a Consul cluster.
 - [ ] Fabio is running on host because it can't find a Consul agent in the
       container where it runs. Connect Fabio, which runs in a container, to
       Consul, which runs on the host
+- [ ] Hass and mqtt are running on two different containers but how can we make
+      them talk to each other?
 
 # Requirements
 | What                                  | Version      |
