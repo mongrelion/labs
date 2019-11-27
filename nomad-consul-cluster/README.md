@@ -29,6 +29,15 @@ $ make datadirs
 It's recommended to run Consul before running Nomad, since Nomad makes use of
 Consul for bootstrapping.
 
+## Encryption Keys
+Consul uses an encryption key to communicate with the clients.  
+Place the encryption key in the `.env` file as shown on the `.env.example` file.
+Then source it like so:
+
+```
+$ source .env
+```
+
 ## Consul
 ```
 $ make consul
