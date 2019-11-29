@@ -10,4 +10,4 @@
 
 # Ignore consul config file since it features encryption key
 /nomad-consul-cluster/.env
-/nomad-consul-cluster/config/consul.json
+/nomad-consul-cluster/config/consul.hcl

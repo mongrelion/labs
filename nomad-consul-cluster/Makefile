@@ -5,10 +5,10 @@ datadirs:
 
 consul-config:
 	@if [ "${ENCKEY}" == "" ]; then echo "=> missing ENCKEY"; exit 1; fi
-	@sed "s;ENCKEY;${ENCKEY};" config/consul.tpl.json > config/consul.json
+	@sed "s;ENCKEY;${ENCKEY};" config/consul.tpl.hcl > config/consul.hcl
 
 consul: consul-config
-	@./bin/consul agent -config-file=config/consul.json
+	@./bin/consul agent -config-file=config/consul.hcl
 
 nomad-server-config:
 	@sed "s;PWD;${PWD};" config/nomad.server.tpl.hcl > config/nomad.server.hcl
