@@ -2,6 +2,12 @@ job "pihole" {
   datacenters = ["sw-ams-1"]
 
   group "main" {
+    volume "pihole" {
+      type      = "host"
+      source    = "pihole"
+      read_only = false
+    }
+
     task "pihole" {
       driver = "docker"
 
@@ -14,8 +20,15 @@ job "pihole" {
         }
       }
 
+      volume_mount {
+        volume      = "pihole"
+        destination = "/etc/pihole"
+        read_only   = false
+      }
+
       env {
-        "TZ" = "Europe/Amsterdam"
+        "TZ"           = "Europe/Amsterdam"
+        "VIRTUAL_HOST" = "pihole.test"
       }
 
       resources {
