@@ -5,7 +5,7 @@
 /nomad-consul-cluster/data/
 
 # Ignore nomad config file since it features full paths. Better use the template (read the README)
-/nomad-consul-cluster/config/nomad.server.json
+/nomad-consul-cluster/config/nomad.server.hcl
 /nomad-consul-cluster/config/nomad.client.hcl
 
 # Ignore consul config file since it features encryption key
