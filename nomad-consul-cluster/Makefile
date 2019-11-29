@@ -1,6 +1,7 @@
 datadirs:
 	@mkdir -p data/nomad/{client,server}
 	@mkdir -p data/consul
+	@mkdir -p data/pihole
 
 consul-config:
 	@if [ "${ENCKEY}" == "" ]; then echo "=> missing ENCKEY"; exit 1; fi
@@ -13,10 +14,10 @@ nomad-server-config:
 	@sed "s;PWD;${PWD};" config/nomad.server.tpl.json> config/nomad.server.json
 
 nomad-client-config:
-	@sed "s;PWD;${PWD};" config/nomad.client.tpl.json> config/nomad.client.json
+	@sed "s;PWD;${PWD};" config/nomad.client.tpl.hcl > config/nomad.client.hcl
 
 nomad-server: nomad-server-config
 	@./bin/nomad agent -config=config/nomad.server.json
 
 nomad-client: nomad-client-config
-	@./bin/nomad agent -config=config/nomad.client.json
+	@./bin/nomad agent -config=config/nomad.client.hcl
