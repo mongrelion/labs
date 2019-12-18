@@ -1,5 +1,5 @@
 job "loadbalancer" {
-  datacenters = ["sw-ams-1"]
+  datacenters = ["dc1"]
   type = "system"
 
   update {
