@@ -1,5 +1,5 @@
 job "blog" {
-  datacenters = ["sw-ams-1"]
+  datacenters = ["dc1"]
 
   group "main" {
     task "blog-frontend" {
