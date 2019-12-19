@@ -6,7 +6,7 @@ job "blog" {
       driver = "docker"
 
       config {
-        image = "mongrelion/blog:latest"
+        image = "mongrelion/blog:129f0cf8ff99947ec377ed6ac9d7a8af034c84d5"
         port_map {
           http  = 80
           https = 443
