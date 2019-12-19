@@ -1,7 +1,7 @@
+DATADIRS = data/nomad/client data/nomad/server data/consul data/pihole
+
 datadirs:
-	@mkdir -p data/nomad/{client,server}
-	@mkdir -p data/consul
-	@mkdir -p data/pihole
+	@for dir in $${DATADIRS}; do mkdir -p $${dir}; done
 
 consul-config:
 	@if [ "${ENCKEY}" == "" ]; then echo "=> missing ENCKEY"; exit 1; fi
@@ -21,3 +21,6 @@ nomad-server: nomad-server-config
 
 nomad-client: nomad-client-config
 	@./bin/nomad agent -config=config/nomad.client.hcl
+
+clean:
+	@for dir in ${DATADIRS}; do rm -rf $${dir}/*; done
