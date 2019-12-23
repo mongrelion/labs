@@ -1,0 +1,42 @@
+version: "3.4"
+
+services:
+  node1:
+    image: gluster/gluster-centos
+    command: /usr/sbin/glusterd --debug
+    privileged: true
+    volumes:
+    - node1:/mnt/bricks/1
+    - ./config:/etc/glusterfs
+
+  node2:
+    image: gluster/gluster-centos
+    command: /usr/sbin/glusterd --debug
+    privileged: true
+    volumes:
+    - node2:/mnt/bricks/2
+    - ./config:/etc/glusterfs
+    restart: always
+
+  node3:
+    image: gluster/gluster-centos
+    command: /usr/sbin/glusterd --debug
+    privileged: true
+    volumes:
+    - node3:/mnt/bricks/3
+    - ./config:/etc/glusterfs
+    restart: always
+
+  client:
+    image: gluster/gluster-centos
+    command: bash
+    privileged: true
+    tty: true
+    volumes:
+    - ./config:/etc/glusterfs
+    restart: always
+
+volumes:
+  node1:
+  node2:
+  node3:
