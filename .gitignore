@@ -11,3 +11,11 @@
 # Ignore consul config file since it features encryption key
 /nomad-consul-cluster/.env
 /nomad-consul-cluster/config/consul.hcl
+
+# Ignore some Homeassistant files
+/hass-mqtt/config/hass/*.db
+/hass-mqtt/config/hass/.HA_VERSION
+/hass-mqtt/config/hass/.storage
+/hass-mqtt/config/hass/deps
+/hass-mqtt/config/hass/tts
+/hass-mqtt/config/hass/home-assistant.log
