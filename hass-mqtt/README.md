@@ -8,18 +8,12 @@ support for mqtt) and turn that light on & off via Homeassistant.
 This is how you do it!
 
 # Getting Started
-Fire up mqtt
+Fire up everything with
 ```
-$ make mqtt
+$ docker-compose up 
 ```
 
-Then Homeassistant:
-```
-$ make hass
-```
-And go to the [UI](http://localhost:8080) and setup the whole thing.
-
-# Registerint the device in Homeassistant
+# Registering the device in Homeassistant
 Somewhere in the `configuration.yaml` file of Hass, you'd have to have a snippet
 that looks like so:
 ```
@@ -39,14 +33,9 @@ when we want to turn the thing on ("1") or off ("2"). How we handle those signal
 is up to the ESP8266 module that will also be listening on the topic "home/terrace/light".
 
 # Posting a payload
-Fire up the mosquitto console like this:
-```
-$ make mqtt-client
-```
+Simply go to Homeasssitant GUI (http://localhost:8123) and set it up.
 
-And post the payload like this:
-
-```
-$ mosquitto_pub -h mosquitto -t home/terrace/light -m 1
-```
-
+Then, open the `Developer Tools -> MQTT -> Listen to a topic`
+Subscribe to the `home/terrace/light` topic and on a different screen start
+turning that light on and off. You should now be able to see the topic receiving
+the 0s and 1s
