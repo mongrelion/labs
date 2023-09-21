@@ -11,6 +11,17 @@
       ],
       "depNameTemplate": "terraform-linters/tflint",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "foo.yml"
+      ],
+      "matchStrings": [
+        "tfSecVersion: (?<currentValue>.*?)\\n"
+      ],
+      "depNameTemplate": "aquasecurity/tfsec",
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
