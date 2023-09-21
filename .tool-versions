@@ -1,4 +1,4 @@
 helm 3.9.4
 terraform 1.0.11
 tflint 0.45.0
-tfsec 1.28.1
+tfsec 1.28.4
