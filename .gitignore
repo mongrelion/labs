@@ -19,3 +19,5 @@
 /hass-mqtt/config/hass/deps
 /hass-mqtt/config/hass/tts
 /hass-mqtt/config/hass/home-assistant.log
+
+.env
